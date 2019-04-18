@@ -3,7 +3,7 @@ import java.util.Scanner;
 class Giftshop
 {
 String name;
-int gifts,shop,i,j,sum=0;
+int gifts,shop,i,sum=0;
 
 Scanner ob=new Scanner(System.in);
 
@@ -28,8 +28,8 @@ void getdata()
 void showValues()
 {
     
-    System.out.println((j+1)+"       "+name+"               "+sum);
-    j++;
+    System.out.println("       "+name+"               "+sum);
+  
 	
     
 }
@@ -67,6 +67,7 @@ void showValues()
         
         for(int i=0;i<n;i++)
         {
+            System.out.print(i+1);
             a[i].showValues();
         }
     }
