@@ -41,3 +41,13 @@ wt[0]=0;
 		wt[i]=wt[i-1]+wt[i-1];
 		totwt=totwt+wt[i];
 	}
+avgwt=(float)totwt/n;
+	printf("G_name\t P_time\t No.Gifts\tW_time\n");
+	for(i=0;i<n;i++)
+	{
+	   printf(" %s\t %d\t %d\t \t%d\n" ,p[i],pt[i],pr[i],wt[i]);
+	}
+	printf("total waiting time=%d\navg waiting time=%f",totwt,avgwt);
+	getch();
+	
+}
