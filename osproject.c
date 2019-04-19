@@ -65,7 +65,7 @@ void showValues()
          }
         }
         
-        System.out.println("Sno.    Student_name    Total_gifts    Arival_Time    Burst_Time(in s)");
+        System.out.println("Priority    Student_name    Total_gifts    Arival_Time    Burst_Time(in s)");
         
         for(int i=0;i<n;i++)
         {
