@@ -3,13 +3,13 @@ import java.util.Scanner;
 class Giftshop
 {
 String name;
-int gifts,shop,i,sum=0;
+int gifts,shop,i,sum=0,burst,arival;
 
 Scanner ob=new Scanner(System.in);
 
-void getdata()
+void getdata(int arival)
 {
-    
+    this.arival=arival;
     System.out.println("enter the name of student");
     name=ob.nextLine();
     
@@ -18,9 +18,10 @@ void getdata()
     
     for(i=0;i<shop;i++)
     {
-    System.out.println("enter no. of gifts picked form shop "+i+1);
+    System.out.println("enter no. of gifts picked form shop "+(i+1));
     gifts=ob.nextInt();
     sum=sum+gifts;
+    burst=sum*5;
     }
     
 }
@@ -28,7 +29,7 @@ void getdata()
 void showValues()
 {
     
-    System.out.println("       "+name+"               "+sum);
+    System.out.println("           "+name+"               "+sum+"               "+arival+"             "+burst);
   
 	
     
@@ -45,8 +46,9 @@ void showValues()
         Giftshop [] a=new Giftshop[n];
         for(int i=0;i<n;i++)
         {
+            int ar=i+1;
             a[i]=new Giftshop();
-            a[i].getdata();
+            a[i].getdata(ar);
         }
   
  
@@ -54,7 +56,7 @@ void showValues()
         {
          for(int j=1;j <(n-i);j++) 
          {
-            if(a[j-1].sum<a[j].sum) 
+            if(a[j-1].burst<a[j].burst) 
             {
                temp = a[j-1];
                a[j-1] = a[j];
@@ -63,7 +65,7 @@ void showValues()
          }
         }
         
-        System.out.println("Sno.    Student_name    total_gifts");
+        System.out.println("Sno.    Student_name    Total_gifts    Arival_Time    Burst_Time(in s)");
         
         for(int i=0;i<n;i++)
         {
